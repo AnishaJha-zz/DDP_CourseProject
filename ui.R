@@ -7,7 +7,7 @@ shinyUI(fluidPage(
   # Sidebar with a slider input for the number of bins
   sidebarLayout(
     sidebarPanel(
-      selectInput("Factor", "Factor:",choices=c("cyl","vs","am","gear","carb"),selected="am")   
+      selectInput("Factor", "Factor:",choices=c("Cylinders"="cyl","V/S"="vs","Automatic Transmission"="am","Gear"="gear","Carburetors"="carb","None"="none"),selected="none")   
       ),
     mainPanel(
       plotOutput("distPlot"),
@@ -21,3 +21,4 @@ shinyUI(fluidPage(
     )
   )
 ))
+
