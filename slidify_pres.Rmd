@@ -1,0 +1,40 @@
+---
+title       : Plot the cars
+subtitle    : Developing Data Products Presentation
+author      : Anisha
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## Select the appropriate Data
+
+1. The idea is to plot the relationship between miles per gallon and horsepower of the cars depending upon various factors.
+2. The in built dataset of mtcars is used.
+3. The user will select the factor on the basis of which he wants to check the relation between mpg and hp. One of the factors amongst transmission mode, number of cylinders,V/S,Gear and Carbeurators is selected. 
+4. The plot between mpg and hp is then split according to the levels in the selected factor and the plot is displayed.
+
+--- .
+
+## The Plot to be displayed
+
+```{r echo=FALSE}
+coplot(mpg ~ hp | as.factor(cyl), data = mtcars, panel = panel.smooth, rows = 1,xlab="Horse power",ylab="Miles per gallon")
+```
+
+--- .
+
+
+## Output for the user
+<img src="coursera_proj.png" height="400px" width="1000px"/>
+
+--- .
+
+## Steps for the user
+
+1. The user needs to select the factor according to which he wants to observe the relationship.
+2. The plot is then modified according to the selected factor and user can observe the relation.
+3. For the factor cylinder we notice that there is a drastic drop in mpg when hp increases for 4 cylinders, whereas for 6 cylinders there is a very slight drop. 
